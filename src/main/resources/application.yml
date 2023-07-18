@@ -44,8 +44,8 @@ db:
   connection.url: dbc:postgresql://%s:%s/%s
   host: localhost
   port: 5432
-  database: payment_initializer
+  database: jhohan.hoyos.meneses
   username: pyminitdb
   password: 4Enm$7h!14@0
-  schema: pmtinit
+  schema: hackaton
 

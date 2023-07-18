@@ -1,12 +1,15 @@
 package com.co.bancolombia.paymentInitializer.entities;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import lombok.*;
+
+import java.io.Serializable;
 import java.sql.Date;
 
     @Data
@@ -14,12 +17,13 @@ import java.sql.Date;
     @Builder(toBuilder = true)
     @NoArgsConstructor
     @AllArgsConstructor
-    @Table(name="hackaton.transacction")
-    public class transacction {
+    @Entity
+    @Table(name="transacction")
+    public class transacction implements Serializable {
 
         @Id
-        @Column(name = "id")
-        public String id;
+        @Column(name = "Id")
+        public int id;
         @Column(name = "fk_client")
         public String fk_client;
         @Column(name = "financialInstitutionCode")
