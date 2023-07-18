@@ -11,8 +11,9 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.UUID;
 
-    @Data
+@Data
     @ToString
     @Builder(toBuilder = true)
     @NoArgsConstructor
@@ -23,9 +24,7 @@ import java.sql.Date;
 
         @Id
         @Column(name = "Id")
-        public int id;
-        @Column(name = "fk_client")
-        public String fk_client;
+        public String id;
         @Column(name = "financialInstitutionCode")
         public String financialInstitutionCode;
         @Column(name = "commerceCode")
@@ -44,7 +43,7 @@ import java.sql.Date;
         public String ticketId;
         @Column(name = "entityUrl")
         public String entityUrl;
-        @Column(name = "soliciteDate")
+        @Column(name = "solicitedate")
         public Date soliciteDate;
         @Column(name = "paymentDescription")
         public String paymentDescription;
@@ -70,9 +69,9 @@ import java.sql.Date;
         public String transactionState;
         @Column(name = "created_on")
         @CreatedDate
-        public String created_on;
+        public Date created_on;
         @Column(name = "update_on")
         @LastModifiedDate
-        public String update_on;
+        public Date update_on;
 
 }

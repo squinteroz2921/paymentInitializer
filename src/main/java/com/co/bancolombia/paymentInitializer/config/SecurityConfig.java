@@ -22,7 +22,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
 
         httpSecurity.authorizeHttpRequests((auth) -> auth
-                        .anyRequest().authenticated())
+                .anyRequest().authenticated())
                 .oauth2ResourceServer((oAuth2Resoucer)-> oAuth2Resoucer.jwt(Customizer.withDefaults()));
         return httpSecurity.build();
     }

@@ -43,7 +43,7 @@ spring:
     properties:
       hibernate:
         temp.use_jdbc_metadata_defaults: false
-        default_schema: pmtinit
+        default_schema: hackaton
     open-in-view: false
 db:
   secret.region: us-east-1
