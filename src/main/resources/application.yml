@@ -6,6 +6,8 @@ management:
   healt:
     show-details: always
 
+
+
 logging:
   level:
     root: INFO
@@ -23,6 +25,11 @@ logging:
   file: /logs/application-debug.log
 
 spring:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          jwk-set-uri: https://bancoalfa.ext.v1.openfinance.achcolombia.com.co/oauth2/jwks
   main:
     banner-mode: off
   output.ansi.enabled: ALWAYS

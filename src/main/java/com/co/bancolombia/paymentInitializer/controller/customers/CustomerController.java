@@ -5,12 +5,14 @@ import com.co.bancolombia.paymentInitializer.dto.customers.CustomersRequest;
 import com.co.bancolombia.paymentInitializer.entities.Customers;
 import com.co.bancolombia.paymentInitializer.services.customers.interfaces.ICustomerService;
 import com.co.bancolombia.paymentInitializer.utils.response.ResponseInfo;
+import jakarta.annotation.security.RolesAllowed;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
@@ -28,6 +30,11 @@ public class CustomerController {
 
     @Autowired
     private ICustomerService iCustomerService;
+
+    @GetMapping("pruebaOauth")
+    public String pruebaOauth(){
+        return "oAuth Exitoso";
+    }
 
     @GetMapping(path = "/{documentNumber}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResponseInfo> getCustomer(@PathVariable("documentNumber") String documentNumber){
