@@ -3,6 +3,8 @@ package com.co.bancolombia.paymentInitializer.dto.client;
 
 import lombok.*;
 
+import java.sql.Date;
+
 @Data
 @ToString
 @Builder(toBuilder = true)

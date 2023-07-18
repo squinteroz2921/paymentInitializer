@@ -1,5 +1,6 @@
 package com.co.bancolombia.paymentInitializer.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -14,17 +15,17 @@ import org.springframework.data.annotation.Id;
 public class account {
 
     @Id
-    @Column("id")
+    @Column(name = "id")
     public String id;
-    @Column("fk_client")
+    @Column(name = "fk_client")
     public String fk_client;
-    @Column("account_type")
+    @Column(name = "account_type")
     public String account_type;
-    @Column("account_number")
+    @Column(name = "account_number")
     public String account_number;
-    @Column("status")
+    @Column(name = "status")
     public String status;
-    @Column("created_on")
+    @Column(name = "created_on")
     @CreatedDate
     public String created_on;
 

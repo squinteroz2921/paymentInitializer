@@ -1,5 +1,6 @@
 package com.co.bancolombia.paymentInitializer.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -14,59 +15,59 @@ import java.sql.Date;
     @NoArgsConstructor
     @AllArgsConstructor
     @Table(name="hackaton.transacction")
-    public class transaction {
+    public class transacction {
 
         @Id
-        @Column("id")
+        @Column(name = "id")
         public String id;
-        @Column("fk_client")
+        @Column(name = "fk_client")
         public String fk_client;
-        @Column("financialInstitutionCode")
+        @Column(name = "financialInstitutionCode")
         public String financialInstitutionCode;
-        @Column("commerceCode")
+        @Column(name = "commerceCode")
         public String commerceCode;
-        @Column("commerceUrl")
+        @Column(name = "commerceUrl")
         public String commerceUrl;
-        @Column("serviceCode")
+        @Column(name = "serviceCode")
         public String serviceCode;
-        @Column("transactionValue")
+        @Column(name = "transactionValue")
         public int transactionValue;
-        @Column("vatValue")
+        @Column(name = "vatValue")
         public int vatValue;
-        @Column("currency")
+        @Column(name = "currency")
         public String currency;
-        @Column("ticketId")
+        @Column(name = "ticketId")
         public String ticketId;
-        @Column("entityUrl")
+        @Column(name = "entityUrl")
         public String entityUrl;
-        @Column("soliciteDate")
+        @Column(name = "soliciteDate")
         public Date soliciteDate;
-        @Column("paymentDescription")
+        @Column(name = "paymentDescription")
         public String paymentDescription;
-        @Column("referenceNumber1")
+        @Column(name = "referenceNumber1")
         public String referenceNumber1;
-        @Column("referenceNumber2")
+        @Column(name = "referenceNumber2")
         public String referenceNumber2;
-        @Column("referenceNumber3")
+        @Column(name = "referenceNumber3")
         public String referenceNumber3;
-        @Column("indicator4per1000")
+        @Column(name = "indicator4per1000")
         public String indicator4per1000;
-        @Column("beneficiaryEntityIdentificationType")
+        @Column(name = "beneficiaryEntityIdentificationType")
         public String beneficiaryEntityIdentificationType;
-        @Column("beneficiaryEntityIdentification")
+        @Column(name = "beneficiaryEntityIdentification")
         public String beneficiaryEntityIdentification;
-        @Column("beneficiaryEntityName")
+        @Column(name = "beneficiaryEntityName")
         public String beneficiaryEntityName;
-        @Column("beneficiaryEntityCIIUCategory")
+        @Column(name = "beneficiaryEntityCIIUCategory")
         public String beneficiaryEntityCIIUCategory;
-        @Column("trazabilityCode")
+        @Column(name = "trazabilityCode")
         public String trazabilityCode;
-        @Column("transactionState")
+        @Column(name = "transactionState")
         public String transactionState;
-        @Column("created_on")
+        @Column(name = "created_on")
         @CreatedDate
         public String created_on;
-        @Column("update_on")
+        @Column(name = "update_on")
         @LastModifiedDate
         public String update_on;
 
