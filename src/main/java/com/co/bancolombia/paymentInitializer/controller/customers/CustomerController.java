@@ -41,7 +41,7 @@ public class CustomerController {
 
 
 
-    @PostMapping("/open-banking/v1/psp/confirm-transaction/")
+    @PostMapping("/open-banking/v1/psp/confirm-transaction")
     public ResponseEntity<ResponseConfirm> confirm(@RequestBody RequestConfirm requestConfirm){
 
         iInitBanckService.update(requestConfirm);
@@ -51,9 +51,9 @@ public class CustomerController {
 
 
         var data = new DataConfirm();
-        data.setAuthorizationId(requestConfirm.getTrazabilityCode());
+        data.setAuthorizationId("70274856");
         data.setTransactionState("OK");
-        data.setTrazabilityCode("70274856");
+        data.setTrazabilityCode(requestConfirm.getTrazabilityCode());
         data.setBankProcessDate(Date.valueOf(LocalDate.now()));
         root.setData(data);
         var headers = new HeadersConfirm();
