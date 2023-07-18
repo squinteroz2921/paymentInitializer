@@ -1,0 +1,51 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  healt:
+    show-details: always
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+      springframework.jdbc:
+        core:
+          JdbcTemplate: DEBUG
+          StatementCreatorUtils: TRACE
+      hibernate: ERROR
+    com.ingeneo: TRACE
+  pattern:
+    console: "%clr(%d{yy-MM-dd E HH:mm:ss.SSS}){blue} %clr(%-5p) %clr(${PID}){faint} %clr(---){faint} %clr([%8.15t]){cyan} %clr(%-40.40logger{0}){blue} %clr(:){red} %clr(%m){faint}%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: /logs/application-debug.log
+
+spring:
+  main:
+    banner-mode: off
+  output.ansi.enabled: ALWAYS
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    show-sql: false
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+        physicalstrategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: false
+        default_schema: pmtinit
+    open-in-view: false
+db:
+  secret.region: us-east-1
+  driver: org.postgresql.Driver
+  connection.url: dbc:postgresql://%s:%s/%s
+  host: localhost
+  port: 5432
+  database: payment_initializer
+  username: pyminitdb
+  password: 4Enm$7h!14@0
+  schema: pmtinit
+
